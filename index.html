@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshat Jain — AI Engineer & Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Akshat Jain — AI Engineer and Full Stack Developer building intelligent systems from model to production." />
+  <meta name="keywords" content="Akshat Jain, AI Engineer, Full Stack Developer, Portfolio, Machine Learning, NLP, React, Python" />
+  <meta name="author" content="Akshat Jain" />
+  <meta property="og:title" content="Akshat Jain — AI Engineer & Full Stack Developer" />
+  <meta property="og:description" content="Building scalable AI systems from model to production." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- SCANLINE OVERLAY -->
+  <div class="scanline-overlay"></div>
+
+  <!-- BOOT SCREEN -->
+  <div class="boot-screen" id="bootScreen">
+    <div class="boot-terminal">
+      <div class="boot-line" data-delay="0">
+        <span class="boot-prefix">[BIOS]</span> Initializing system...
+      </div>
+      <div class="boot-line" data-delay="300">
+        <span class="boot-prefix">[OK]</span> Loading kernel modules
+      </div>
+      <div class="boot-line" data-delay="600">
+        <span class="boot-prefix">[OK]</span> Mounting filesystem
+      </div>
+      <div class="boot-line" data-delay="900">
+        <span class="boot-prefix">[OK]</span> Neural networks initialized
+      </div>
+      <div class="boot-line" data-delay="1200">
+        <span class="boot-prefix">[OK]</span> Portfolio loaded successfully
+      </div>
+      <div class="boot-line boot-ready" data-delay="1600">
+        <span class="boot-prefix">&gt;</span> Welcome, Akshat Jain_
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="nav-bracket">[</span>AJ<span class="nav-bracket">]</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link" data-section="about">about</a>
+      <a href="#skills" class="nav-link" data-section="skills">stack</a>
+      <a href="#projects" class="nav-link" data-section="projects">projects</a>
+      <a href="#achievements" class="nav-link" data-section="achievements">achievements</a>
+      <a href="#contact" class="nav-link" data-section="contact">contact</a>
+    </div>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">available for hire</span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">akshat@portfolio:~</span>
+      </div>
+      <div class="hero-terminal-body">
+        <div class="hero-greeting">
+          <span class="terminal-prompt">$</span>
+          <span class="typed-text" id="heroGreeting"></span>
+          <span class="terminal-cursor">▊</span>
+        </div>
+        <h1 class="hero-name glitch" data-text="Akshat Jain">Akshat Jain</h1>
+        <p class="hero-role">
+          <span class="role-prefix">&gt;</span>
+          AI Engineer <span class="role-separator">×</span> Full Stack Developer
+        </p>
+        <p class="hero-tagline">Building scalable AI systems from model to production.</p>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <span class="btn-icon">→</span> View My Work
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span class="btn-icon">$</span> Let's Connect
+        </a>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">System.info()</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-neofetch">
+        <div class="neofetch-terminal">
+          <div class="terminal-bar-mini">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title-mini">neofetch</span>
+          </div>
+          <div class="neofetch-content">
+            <pre class="ascii-art">
+     ██████╗      
+    ██╔═══██╗     
+    ███████║█╗    
+    ██╔═══██║     
+    ██║   ██║     
+    ╚═╝   ╚═╝     
+            </pre>
+            <div class="neofetch-info">
+              <div class="neofetch-line">
+                <span class="nf-label">akshat</span><span class="nf-at">@</span><span class="nf-host">portfolio</span>
+              </div>
+              <div class="neofetch-separator">─────────────────</div>
+              <div class="neofetch-line">
+                <span class="nf-key">OS:</span> <span class="nf-value">Developer v24.0</span>
+              </div>
+              <div class="neofetch-line">
+                <span class="nf-key">Role:</span> <span class="nf-value">AI Engineer × Full Stack Dev</span>
+              </div>
+              <div class="neofetch-line">
+                <span class="nf-key">Education:</span> <span class="nf-value">B.Tech CSE (AI) — Final Year</span>
+              </div>
+              <div class="neofetch-line">
+                <span class="nf-key">Location:</span> <span class="nf-value">Greater Noida, India</span>
+              </div>
+              <div class="neofetch-line">
+                <span class="nf-key">Focus:</span> <span class="nf-value">ML · NLP · Full Stack</span>
+              </div>
+              <div class="neofetch-line">
+                <span class="nf-key">Status:</span> <span class="nf-value status-available">● Available for hire</span>
+              </div>
+              <div class="neofetch-colors">
+                <span class="color-block" style="background:#ff5f56"></span>
+                <span class="color-block" style="background:#ffbd2e"></span>
+                <span class="color-block" style="background:#27c93f"></span>
+                <span class="color-block" style="background:#00E5FF"></span>
+                <span class="color-block" style="background:#58A6FF"></span>
+                <span class="color-block" style="background:#BD93F9"></span>
+                <span class="color-block" style="background:#FF79C6"></span>
+                <span class="color-block" style="background:#F8F8F2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>I'm a final-year B.Tech CSE student specializing in Artificial Intelligence, building production-grade systems that bridge the gap between research and real-world impact.</p>
+        <p>From training deep learning models to deploying full-stack applications, I focus on the entire lifecycle — <span class="highlight">data pipelines → model training → scalable APIs → user-facing products.</span></p>
+        <p>Currently shipping <span class="highlight">Medverse AI</span>, an intelligent healthcare diagnostics platform, and exploring advanced NLP applications with published research at <span class="highlight">ICICC 2025</span>.</p>
+        <a href="/resume.pdf" class="btn btn-ghost btn-sm" download>
+          <span class="btn-icon">↓</span> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">installed.packages()</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category" data-category="languages">
+        <div class="skill-category-header">
+          <span class="skill-icon">⟨/⟩</span>
+          <h3>Languages</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-skill="Python">
+            <img src="https://skillicons.dev/icons?i=python&theme=dark" alt="Python" width="40" />
+            <span>Python</span>
+          </div>
+          <div class="skill-item" data-skill="C++">
+            <img src="https://skillicons.dev/icons?i=cpp&theme=dark" alt="C++" width="40" />
+            <span>C++</span>
+          </div>
+          <div class="skill-item" data-skill="JavaScript">
+            <img src="https://skillicons.dev/icons?i=javascript&theme=dark" alt="JavaScript" width="40" />
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item" data-skill="TypeScript">
+            <img src="https://skillicons.dev/icons?i=typescript&theme=dark" alt="TypeScript" width="40" />
+            <span>TypeScript</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" data-category="frontend">
+        <div class="skill-category-header">
+          <span class="skill-icon">◧</span>
+          <h3>Frontend</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-skill="React">
+            <img src="https://skillicons.dev/icons?i=react&theme=dark" alt="React" width="40" />
+            <span>React</span>
+          </div>
+          <div class="skill-item" data-skill="HTML">
+            <img src="https://skillicons.dev/icons?i=html&theme=dark" alt="HTML" width="40" />
+            <span>HTML5</span>
+          </div>
+          <div class="skill-item" data-skill="CSS">
+            <img src="https://skillicons.dev/icons?i=css&theme=dark" alt="CSS" width="40" />
+            <span>CSS3</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" data-category="backend">
+        <div class="skill-category-header">
+          <span class="skill-icon">⚙</span>
+          <h3>Backend</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-skill="Node.js">
+            <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" alt="Node.js" width="40" />
+            <span>Node.js</span>
+          </div>
+          <div class="skill-item" data-skill="FastAPI">
+            <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" alt="FastAPI" width="40" />
+            <span>FastAPI</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category" data-category="aiml">
+        <div class="skill-category-header">
+          <span class="skill-icon">◈</span>
+          <h3>AI / ML</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-skill="TensorFlow">
+            <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" alt="TensorFlow" width="40" />
+            <span>TensorFlow</span>
+          </div>
+          <div class="skill-item" data-skill="PyTorch">
+            <img src="https://skillicons.dev/icons?i=pytorch&theme=dark" alt="PyTorch" width="40" />
+            <span>PyTorch</span>
+          </div>
+          <div class="skill-item" data-skill="scikit-learn">
+            <img src="https://skillicons.dev/icons?i=scikitlearn&theme=dark" alt="scikit-learn" width="40" />
+            <span>scikit-learn</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category skill-category-wide" data-category="devops">
+        <div class="skill-category-header">
+          <span class="skill-icon">☁</span>
+          <h3>Tools & Infrastructure</h3>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item" data-skill="Git">
+            <img src="https://skillicons.dev/icons?i=git&theme=dark" alt="Git" width="40" />
+            <span>Git</span>
+          </div>
+          <div class="skill-item" data-skill="GitHub">
+            <img src="https://skillicons.dev/icons?i=github&theme=dark" alt="GitHub" width="40" />
+            <span>GitHub</span>
+          </div>
+          <div class="skill-item" data-skill="Docker">
+            <img src="https://skillicons.dev/icons?i=docker&theme=dark" alt="Docker" width="40" />
+            <span>Docker</span>
+          </div>
+          <div class="skill-item" data-skill="Firebase">
+            <img src="https://skillicons.dev/icons?i=firebase&theme=dark" alt="Firebase" width="40" />
+            <span>Firebase</span>
+          </div>
+          <div class="skill-item" data-skill="MySQL">
+            <img src="https://skillicons.dev/icons?i=mysql&theme=dark" alt="MySQL" width="40" />
+            <span>MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">ps aux | grep projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- FEATURED PROJECT -->
+    <div class="project-featured">
+      <div class="project-featured-badge">⚡ Featured Project</div>
+      <div class="project-featured-content">
+        <div class="project-featured-info">
+          <h3 class="project-title">Medverse AI</h3>
+          <p class="project-desc">Full-stack AI healthcare diagnostics platform with real-time appointment scheduling. Features symptom analysis powered by Gemini, X-ray classification using deep learning, and automated lab report parsing — all deployed via FastAPI + React.</p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">WebSocket</span>
+            <span class="tech-tag">Gemini API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/akshatjain306/Medverse_AI" class="project-link" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              Source Code
+            </a>
+          </div>
+        </div>
+        <div class="project-featured-visual">
+          <div class="project-window">
+            <div class="terminal-bar-mini">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="project-preview">
+              <div class="preview-module">
+                <span class="module-icon">🩺</span>
+                <span>Symptom Checker</span>
+              </div>
+              <div class="preview-module">
+                <span class="module-icon">🫁</span>
+                <span>X-Ray Analysis</span>
+              </div>
+              <div class="preview-module">
+                <span class="module-icon">📋</span>
+                <span>Lab Reports</span>
+              </div>
+              <div class="preview-module">
+                <span class="module-icon">📅</span>
+                <span>Real-Time Scheduler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER PROJECTS -->
+    <div class="projects-grid">
+      <div class="project-card" data-aos="fade-up">
+        <div class="project-card-header">
+          <svg class="project-folder-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <a href="https://github.com/akshatjain306/Fake_News_Detection_Project" class="project-external-link" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+        <h4 class="project-card-title">Fake News Detector</h4>
+        <p class="project-card-desc">Multi-model NLP ensemble pipeline using Logistic Regression, SVM, Naive Bayes, and Decision Tree classification.</p>
+        <div class="project-card-metric">
+          <span class="metric-value">92%</span>
+          <span class="metric-label">Accuracy</span>
+        </div>
+        <div class="project-card-tags">
+          <span>Python</span>
+          <span>scikit-learn</span>
+          <span>NLP</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up">
+        <div class="project-card-header">
+          <svg class="project-folder-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <a href="https://github.com/akshatjain306/CricketPredictor" class="project-external-link" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+        <h4 class="project-card-title">Cricket Predictor</h4>
+        <p class="project-card-desc">Match outcome prediction engine using XGBoost and regression ensemble, deployed to Streamlit for live inference.</p>
+        <div class="project-card-metric">
+          <span class="metric-value">85%</span>
+          <span class="metric-label">Accuracy</span>
+        </div>
+        <div class="project-card-tags">
+          <span>XGBoost</span>
+          <span>Pandas</span>
+          <span>Streamlit</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up">
+        <div class="project-card-header">
+          <svg class="project-folder-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <div class="project-wip-badge">WIP</div>
+        </div>
+        <h4 class="project-card-title">Portfolio</h4>
+        <p class="project-card-desc">This very site — a terminal-themed portfolio built with vanilla JS and Vite. Featuring particle effects, custom cursor, and boot sequence animation.</p>
+        <div class="project-card-metric">
+          <span class="metric-value">◈</span>
+          <span class="metric-label">You're looking at it</span>
+        </div>
+        <div class="project-card-tags">
+          <span>JavaScript</span>
+          <span>Vite</span>
+          <span>CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS SECTION -->
+  <section class="section" id="achievements">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">cat /var/log/achievements</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2025</span>
+          <h4>Research Published at ICICC 2025</h4>
+          <p>Published research paper on AI-powered healthcare diagnostics systems at the International Conference on Innovative Computing and Communication.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024–25</span>
+          <h4>Built Medverse AI</h4>
+          <p>Designed and deployed a full-stack healthcare diagnostics platform integrating symptom analysis, X-ray classification, lab report parsing, and real-time scheduling.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024</span>
+          <h4>Multiple AI Applications Deployed</h4>
+          <p>Built and shipped AI-powered applications spanning NLP, computer vision, and predictive analytics — including a 92% accuracy fake news detector.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Ongoing</span>
+          <h4>Competitive Development</h4>
+          <p>Active participation in hackathons and competitive programming with strong DSA foundation and real-world problem-solving experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">ssh akshat@hire.me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-container">
+      <div class="contact-terminal">
+        <div class="terminal-bar-mini">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title-mini">connection established</span>
+        </div>
+        <div class="contact-terminal-body">
+          <p class="contact-prompt"><span class="terminal-prompt">$</span> echo "Let's build something together"</p>
+          <p class="contact-output">I'm currently open to full-time roles, freelance projects, and research collaborations in AI and full-stack development.</p>
+          <p class="contact-prompt"><span class="terminal-prompt">$</span> cat contact.txt</p>
+          <div class="contact-links">
+            <a href="mailto:akshat8859@gmail.com" class="contact-link">
+              <span class="contact-link-icon">✉</span>
+              <span class="contact-link-label">akshat8859@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/akshatjain8859/" class="contact-link" target="_blank">
+              <span class="contact-link-icon">◆</span>
+              <span class="contact-link-label">linkedin.com/in/akshatjain8859</span>
+            </a>
+            <a href="https://github.com/akshatjain306" class="contact-link" target="_blank">
+              <span class="contact-link-icon">◈</span>
+              <span class="contact-link-label">github.com/akshatjain306</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-tagline">"Code. Build. Deploy. Repeat."</p>
+      <p class="footer-credit">Designed & Built by <span class="highlight">Akshat Jain</span></p>
+      <p class="footer-year">© 2025</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

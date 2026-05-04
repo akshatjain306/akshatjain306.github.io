@@ -157,8 +157,22 @@ function initSmoothScroll() {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile menu if open
+        document.querySelector('.nav-links')?.classList.remove('open');
+        document.getElementById('navHamburger')?.classList.remove('active');
       }
     });
+  });
+}
+
+// ============ MOBILE MENU ============
+function initMobileMenu() {
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (!hamburger || !navLinks) return;
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('open');
   });
 }
 
@@ -171,4 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initNav();
   initSmoothScroll();
+  initMobileMenu();
 });
+

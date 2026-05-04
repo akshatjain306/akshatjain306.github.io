@@ -134,8 +134,11 @@ function initScrollReveal() {
 function initNav() {
   const nav = document.getElementById('nav');
   const links = document.querySelectorAll('.nav-link');
+  const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
+    // Back to top visibility
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 400);
     // Active section highlight
     const sections = document.querySelectorAll('.section, .hero');
     let current = '';
@@ -147,6 +150,12 @@ function initNav() {
       l.classList.toggle('active', l.dataset.section === current);
     });
   });
+  // Back to top click
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
 
 // ============ SMOOTH SCROLL ============

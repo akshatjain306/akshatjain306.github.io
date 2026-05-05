@@ -119,6 +119,7 @@ function initParticles() {
 function initScrollReveal() {
   const sections = document.querySelectorAll('.section');
   const timelineItems = document.querySelectorAll('.timeline-item');
+  const expItems = document.querySelectorAll('.exp-item');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -128,6 +129,7 @@ function initScrollReveal() {
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   sections.forEach(s => observer.observe(s));
   timelineItems.forEach(t => observer.observe(t));
+  expItems.forEach(e => observer.observe(e));
 }
 
 // ============ NAV SCROLL EFFECT ============
@@ -185,6 +187,122 @@ function initMobileMenu() {
   });
 }
 
+// ============ INTERACTIVE TERMINAL ============
+function initInteractiveTerminal() {
+  const input = document.getElementById('termInput');
+  const terminal = document.getElementById('interactiveTerminal');
+  if (!input || !terminal) return;
+
+  const output = terminal.querySelector('.term-output');
+
+  const commands = {
+    help: `Available commands:
+  <span class="highlight">about</span>      — Who am I?
+  <span class="highlight">skills</span>     — Tech stack
+  <span class="highlight">projects</span>   — Featured projects
+  <span class="highlight">experience</span> — Work history
+  <span class="highlight">publications</span> — Research papers
+  <span class="highlight">contact</span>    — Get in touch
+  <span class="highlight">resume</span>     — Download resume
+  <span class="highlight">whoami</span>     — System info
+  <span class="highlight">clear</span>      — Clear terminal`,
+
+    about: `<span class="highlight">Akshat Jain</span> — AI Engineer × Full Stack Developer
+Final-year B.Tech CSE (AI) student building
+production-grade systems from model to deployment.
+
+Currently shipping <span class="highlight">Medverse AI</span> and exploring
+advanced NLP with published research at <span class="highlight">ICICC 2025</span>.`,
+
+    skills: `<span class="highlight">Languages:</span>  Python · C++ · JavaScript · TypeScript
+<span class="highlight">Frontend:</span>   React · HTML5 · CSS3
+<span class="highlight">Backend:</span>    FastAPI · Node.js
+<span class="highlight">AI/ML:</span>      TensorFlow · PyTorch · scikit-learn
+<span class="highlight">Tools:</span>      Git · Docker · Firebase · MySQL`,
+
+    projects: `<span class="highlight">01.</span> Medverse AI — Healthcare diagnostics platform
+    React + FastAPI + TensorFlow + WebSocket
+    → <a href="https://github.com/akshatjain306/Medverse_AI" target="_blank">github.com/akshatjain306/Medverse_AI</a>
+
+<span class="highlight">02.</span> Fake News Detector — 92% accuracy NLP pipeline
+    → <a href="https://github.com/akshatjain306/Fake_News_Detection_Project" target="_blank">github.com/akshatjain306/Fake_News_Detection</a>
+
+<span class="highlight">03.</span> Cricket Predictor — XGBoost match prediction
+    → <a href="https://github.com/akshatjain306/CricketPredictor" target="_blank">github.com/akshatjain306/CricketPredictor</a>`,
+
+    experience: `<span class="highlight">AI Developer & Lead Architect</span>
+  Medverse AI — Capstone Project (Sep 2024 – Present)
+
+<span class="highlight">NLP Research & Paper Author</span>
+  ICICC 2025 — International Conference (Jan–Apr 2025)
+
+<span class="highlight">ML Engineer — AI Applications</span>
+  Independent Projects (2024)`,
+
+    publications: `<span class="highlight">📄 AI-Powered Healthcare Diagnostics</span>
+  Multi-Module Approach for Intelligent Medical Analysis
+  Published at ICICC 2025 ✅
+  Topics: Deep Learning · Healthcare AI · Medical NLP`,
+
+    contact: `<span class="highlight">Email:</span>    <a href="mailto:akshat8859@gmail.com">akshat8859@gmail.com</a>
+<span class="highlight">LinkedIn:</span> <a href="https://linkedin.com/in/akshatjain8859/" target="_blank">linkedin.com/in/akshatjain8859</a>
+<span class="highlight">GitHub:</span>   <a href="https://github.com/akshatjain306" target="_blank">github.com/akshatjain306</a>`,
+
+    resume: `Downloading resume... ⬇`,
+
+    whoami: `<span class="highlight">akshat@portfolio</span>
+OS:        Developer v26.0
+Uptime:    22 years
+Shell:     zsh 5.9
+Terminal:  Cyberpunk v2.0
+Status:    <span style="color:#27c93f;">● Available for hire</span>`,
+  };
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    const cmd = input.value.trim().toLowerCase();
+    if (!cmd) return;
+
+    // Add command to history
+    const cmdLine = document.createElement('div');
+    cmdLine.className = 'term-history-line';
+    cmdLine.innerHTML = `<p class="term-history-cmd"><span class="terminal-prompt">$</span> ${cmd}</p>`;
+    output.appendChild(cmdLine);
+
+    if (cmd === 'clear') {
+      output.innerHTML = '';
+    } else if (cmd === 'resume') {
+      const resp = document.createElement('div');
+      resp.className = 'term-history-response';
+      resp.innerHTML = commands.resume;
+      output.appendChild(resp);
+      // Trigger download
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Akshat_Jain_Resume.pdf';
+      link.click();
+    } else if (commands[cmd]) {
+      const resp = document.createElement('div');
+      resp.className = 'term-history-response';
+      resp.innerHTML = commands[cmd];
+      output.appendChild(resp);
+    } else {
+      const resp = document.createElement('div');
+      resp.className = 'term-history-response term-error';
+      resp.textContent = `command not found: ${cmd}. Type 'help' for available commands.`;
+      output.appendChild(resp);
+    }
+
+    input.value = '';
+    // Auto scroll to bottom
+    const termBody = terminal.querySelector('.interactive-terminal-body');
+    termBody.scrollTop = termBody.scrollHeight;
+  });
+
+  // Focus input on terminal click
+  terminal.addEventListener('click', () => input.focus());
+}
+
 // ============ INIT ============
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = 'hidden';
@@ -195,5 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initSmoothScroll();
   initMobileMenu();
+  initInteractiveTerminal();
 });
 

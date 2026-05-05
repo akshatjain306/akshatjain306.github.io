@@ -212,7 +212,7 @@ Final-year B.Tech CSE (AI) student building
 production-grade systems from model to deployment.
 
 Currently shipping <span class="highlight">Medverse AI</span> and exploring
-advanced NLP with published research at <span class="highlight">ICICC 2025</span>.`,
+deepfake detection with published research at <span class="highlight">ICICC 2025</span>.`,
 
     skills: `<span class="highlight">Languages:</span>  Python · C++ · JavaScript · TypeScript
 <span class="highlight">Frontend:</span>   React · HTML5 · CSS3
@@ -233,16 +233,16 @@ advanced NLP with published research at <span class="highlight">ICICC 2025</span
     experience: `<span class="highlight">AI Developer & Lead Architect</span>
   Medverse AI — Capstone Project (Sep 2024 – Present)
 
-<span class="highlight">NLP Research & Paper Author</span>
+<span class="highlight">Deepfake Research & Paper Author</span>
   ICICC 2025 — International Conference (Jan–Apr 2025)
 
 <span class="highlight">ML Engineer — AI Applications</span>
   Independent Projects (2024)`,
 
-    publications: `<span class="highlight">📄 AI-Powered Healthcare Diagnostics</span>
-  Multi-Module Approach for Intelligent Medical Analysis
-  Published at ICICC 2025 ✅
-  Topics: Deep Learning · Healthcare AI · Medical NLP`,
+    publications: `<span class="highlight">📄 Towards Face Deepfake Detection: A Review</span>
+  with Research Challenges and Future Direction
+  Published at ICICC 2025 (Springer) ✅
+  Topics: Deepfakes · Computer Vision · GANs · Transformers`,
 
     contact: `<span class="highlight">Email:</span>    <a href="mailto:akshat8859@gmail.com">akshat8859@gmail.com</a>
 <span class="highlight">LinkedIn:</span> <a href="https://linkedin.com/in/akshatjain8859/" target="_blank">linkedin.com/in/akshatjain8859</a>

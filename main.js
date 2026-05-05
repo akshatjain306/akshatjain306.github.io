@@ -242,6 +242,7 @@ deepfake detection with published research at <span class="highlight">ICICC 2025
     publications: `<span class="highlight">📄 Towards Face Deepfake Detection: A Review</span>
   with Research Challenges and Future Direction
   Published at ICICC 2025 (Springer) ✅
+  Link: <a href="https://link.springer.com/chapter/10.1007/978-981-96-7526-5_35" target="_blank">link.springer.com/chapter/...</a>
   Topics: Deepfakes · Computer Vision · GANs · Transformers`,
 
     contact: `<span class="highlight">Email:</span>    <a href="mailto:akshat8859@gmail.com">akshat8859@gmail.com</a>

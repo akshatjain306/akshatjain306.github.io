@@ -250,6 +250,11 @@ img { max-width: 100%; }
 .pub-status { display:flex; align-items:center; }
 .pub-status-badge { font-family:var(--font-mono); font-size:0.75rem; padding:4px 12px; border-radius:4px; }
 .pub-status-badge.published { background:rgba(39,201,63,0.1); border:1px solid rgba(39,201,63,0.25); color:var(--green); }
+.pub-doi { font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid var(--border); }
+.pub-doi a { color:var(--text-muted); text-decoration:underline; text-underline-offset:2px; }
+.pub-doi a:hover { color:var(--cyan); }
+.pub-status .btn-ghost { animation:subtle-pulse 4s ease-in-out infinite; }
+@keyframes subtle-pulse { 0%,100%{box-shadow:none;} 50%{box-shadow:0 0 10px rgba(0,229,255,0.2);} }
 
 /* ============ INTERACTIVE TERMINAL ============ */
 .interactive-terminal-wrapper { max-width:700px; margin:0 auto; }

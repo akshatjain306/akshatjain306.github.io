@@ -197,15 +197,20 @@ function initInteractiveTerminal() {
 
   const commands = {
     help: `Available commands:
-  <span class="highlight">about</span>      — Who am I?
-  <span class="highlight">skills</span>     — Tech stack
-  <span class="highlight">projects</span>   — Featured projects
-  <span class="highlight">experience</span> — Work history
+  <span class="highlight">about</span>        — Who am I?
+  <span class="highlight">skills</span>       — Tech stack
+  <span class="highlight">projects</span>     — Featured projects
+  <span class="highlight">experience</span>   — Work history
   <span class="highlight">publications</span> — Research papers
-  <span class="highlight">contact</span>    — Get in touch
-  <span class="highlight">resume</span>     — Download resume
-  <span class="highlight">whoami</span>     — System info
-  <span class="highlight">clear</span>      — Clear terminal`,
+  <span class="highlight">contact</span>      — Get in touch
+  <span class="highlight">resume</span>       — Download resume
+  <span class="highlight">whoami</span>       — System info
+  <span class="highlight">date</span>         — Current date/time
+  <span class="highlight">ls</span>           — List portfolio files
+  <span class="highlight">uname</span>        — System info
+  <span class="highlight">github</span>       — Open GitHub profile
+  <span class="highlight">motd</span>         — Message of the day
+  <span class="highlight">clear</span>        — Clear terminal`,
 
     about: `<span class="highlight">Akshat Jain</span> — AI Engineer × Full Stack Developer
 Final-year B.Tech CSE (AI) student building
@@ -256,13 +261,64 @@ OS:        Developer v26.0
 Uptime:    22 years
 Shell:     zsh 5.9
 Terminal:  Cyberpunk v2.0
-Status:    <span style="color:#27c93f;">● Available for hire</span>`,
+Status:    <span style="color:#27c93f">● Available for hire</span>`,
+
+    date: `<span class="highlight">${new Date().toDateString()}</span> ${new Date().toLocaleTimeString()}
+Timezone:  IST (India Standard Time)`,
+
+    uname: `portfolio-os 2.0.6-cyberpunk #1 SMP Mon Jan 1 00:00:00 IST 2026
+arch: x86_64  uptime: 22yr  load: 0.42`,
+
+    ls: `<span class="highlight">drwxr-xr-x</span>  about/
+<span class="highlight">drwxr-xr-x</span>  experience/
+<span class="highlight">drwxr-xr-x</span>  projects/
+<span class="highlight">drwxr-xr-x</span>  publications/
+<span class="highlight">drwxr-xr-x</span>  contact/
+<span class="highlight">-rw-r--r--</span>  resume.pdf
+<span class="highlight">-rw-r--r--</span>  deepfake_paper.pdf`,
+
+    github: `Opening GitHub profile...
+→ <a href="https://github.com/akshatjain306" target="_blank">github.com/akshatjain306</a>`,
+
+    motd: `┌────────────────────────────────┐
+│  <span class="highlight">Welcome to Akshat's Portfolio</span>   │
+│  AI Engineer × Full Stack Dev        │
+│  Springer Published Researcher       │
+│                                      │
+│  Type <span class="highlight">help</span> to explore             │
+└────────────────────────────────┘`,
   };
 
+  // Arrow key history navigation
+  let history = [];
+  let historyIndex = -1;
   input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (historyIndex < history.length - 1) {
+        historyIndex++;
+        input.value = history[historyIndex];
+      }
+      return;
+    }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        historyIndex--;
+        input.value = history[historyIndex];
+      } else {
+        historyIndex = -1;
+        input.value = '';
+      }
+      return;
+    }
     if (e.key !== 'Enter') return;
     const cmd = input.value.trim().toLowerCase();
     if (!cmd) return;
+
+    // Save to history
+    history.unshift(cmd);
+    historyIndex = -1;
 
     // Add command to history
     const cmdLine = document.createElement('div');
@@ -277,11 +333,23 @@ Status:    <span style="color:#27c93f;">● Available for hire</span>`,
       resp.className = 'term-history-response';
       resp.innerHTML = commands.resume;
       output.appendChild(resp);
-      // Trigger download
       const link = document.createElement('a');
       link.href = '/resume.pdf';
       link.download = 'Akshat_Jain_Resume.pdf';
       link.click();
+    } else if (cmd === 'github') {
+      const resp = document.createElement('div');
+      resp.className = 'term-history-response';
+      resp.innerHTML = commands.github;
+      output.appendChild(resp);
+      setTimeout(() => window.open('https://github.com/akshatjain306', '_blank'), 800);
+    } else if (cmd === 'date') {
+      // Re-evaluate date at runtime
+      const resp = document.createElement('div');
+      resp.className = 'term-history-response';
+      resp.innerHTML = `<span class="highlight">${new Date().toDateString()}</span> ${new Date().toLocaleTimeString()}
+Timezone:  IST (India Standard Time)`;
+      output.appendChild(resp);
     } else if (commands[cmd]) {
       const resp = document.createElement('div');
       resp.className = 'term-history-response';
@@ -295,7 +363,6 @@ Status:    <span style="color:#27c93f;">● Available for hire</span>`,
     }
 
     input.value = '';
-    // Auto scroll to bottom
     const termBody = terminal.querySelector('.interactive-terminal-body');
     termBody.scrollTop = termBody.scrollHeight;
   });

@@ -170,7 +170,7 @@ img { max-width: 100%; }
 .preview-module { display:flex; align-items:center; gap:8px; padding:12px; background:rgba(0,229,255,0.04); border:1px solid var(--border); border-radius:6px; font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim); transition:all 0.3s; }
 .preview-module:hover { border-color:var(--cyan); background:rgba(0,229,255,0.08); }
 .module-icon { font-size:1.2rem; }
-.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:1.5rem; }
 .project-card { background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:1.5rem; transition:all 0.4s; display:flex; flex-direction:column; }
 .project-card:hover { border-color:var(--cyan); transform:translateY(-5px); box-shadow:0 10px 40px rgba(0,229,255,0.08); }
 .project-card-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }

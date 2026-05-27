@@ -23,7 +23,7 @@ A terminal-themed cyberpunk portfolio built with vanilla JavaScript and Vite.
 - 📱 **Fully Responsive** — Mobile hamburger menu with fullscreen overlay
 - 🚀 **Auto Deploy** — GitHub Actions CI/CD on every push
 
-## Tech Stack
+## Tech Stack..
 
 | Layer | Technology |
 |-------|-----------|

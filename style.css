@@ -93,6 +93,11 @@ img { max-width: 100%; }
 .role-prefix { color:var(--cyan); margin-right:6px; }
 .role-separator { color:var(--cyan); margin:0 4px; }
 .hero-tagline { font-size:0.95rem; color:var(--text-muted); margin-top:0.5rem; }
+.hero-badges { display:flex; flex-wrap:wrap; gap:8px; margin-top:1rem; }
+.hero-badge { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:0.72rem; padding:5px 12px; background:rgba(0,229,255,0.06); border:1px solid rgba(0,229,255,0.2); border-radius:20px; color:var(--cyan); transition:all 0.3s; text-decoration:none; }
+.hero-badge:hover { background:rgba(0,229,255,0.12); border-color:var(--cyan); color:var(--cyan); transform:none; }
+.hero-badge-muted { color:var(--green); background:rgba(39,201,63,0.06); border-color:rgba(39,201,63,0.2); }
+.hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--cyan); animation:pulse-dot 2s infinite; flex-shrink:0; }
 .hero-cta { display:flex; gap:1rem; margin-top:2rem; }
 .hero-scroll-indicator { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; }
 .hero-scroll-indicator span { font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:2px; }
